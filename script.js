@@ -15,8 +15,12 @@ var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n
  var confirmUpper;
  var confirmLower;
 
- 
 
+//write a function that asks how long the user would like the password
+
+function generatePassword(){
+  var confirmLength = (prompt("How many characters would you like in your password?"));
+}
 
 
 
