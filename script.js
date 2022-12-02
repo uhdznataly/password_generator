@@ -50,6 +50,38 @@ while (confirmLower === false && confirmUpper === false && confirmNumber === fal
 }
 
 
+
+var passwordCharacters = []
+
+if (confirmSpecialCharacter){
+  passwordCharacters = passwordCharacters.concat(number)
+}
+
+if (confirmSpecialCharacter){
+  passwordCharacters = passwordCharacters.concat(specialCharacter)
+}
+
+if (confirmUpper){
+  passwordCharacters = passwordCharacters.concat(upper)
+}
+
+if (confirmLower){
+  passwordCharacters = passwordCharacters.concat(lower)
+}
+
+console.log(passwordCharacters)
+  
+
+//create empty string 
+
+var randomPassword = ""
+for (var i = 0; i < confirmLength; i++) {
+  randomPassword = randomPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+  console.log(randomPassword)
+}
+return randomPassword;
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -59,5 +91,7 @@ function writePassword() {
 
 }
 
+  
+  
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
