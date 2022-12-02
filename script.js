@@ -20,66 +20,69 @@ var confirmLower;
 
 function generatePassword() {
   var confirmLength = (prompt("How many characters would you like in your password?"));
-}
+
 
 //write a loop in case their answer is outside of the parameters 
 
-while (confirmLength <= 7 || confirmLength >= 51) {
-  alert("Password must be between 8-50 characters. Please enter a different length.");
-  var confirmLength = (prompt("How many characters would you like in your password?"));
-}
+  while (confirmLength <= 7 || confirmLength >= 51) {
+    alert("Password must be between 8-50 characters. Please enter a different length.");
+    var confirmLength = (prompt("How many characters would you like in your password?"));
+    }
 
-alert(`Great! Your password will contain ${confirmLength} characters.`);
+    alert(`Great! Your password will contain ${confirmLength} characters.`);
 
 
 //determine characteristics of password
 
-var confirmSpecialCharacter = confirm("Click OK to add a special character to your password.");
-var confirmNumber = confirm("Click OK to add a number to your password.");
-var confirmUpper = confirm("Click OK to an upper case letter to your password");
-var confirmLower = confirm("Click OK to add a lower case letter to your password");
+    var confirmSpecialCharacter = confirm("Click OK to add a special character to your password.");
+    var confirmNumber = confirm("Click OK to add a number to your password.");
+    var confirmUpper = confirm("Click OK to an upper case letter to your password");
+    var confirmLower = confirm("Click OK to add a lower case letter to your password");
 
 //loop to confirm they chose at least one parameter
 
-while (confirmLower === false && confirmUpper === false && confirmNumber === false && confirmSpecialCharacter === false) {
-  alert("You must choose at least one parameter.");
-  var confirmSpecialCharacter = confirm("Click OK to add a special character to your password.");
-  var confirmNumber = confirm("Click OK to add a number to your password.");
-  var confirmUpper = confirm("Click OK to an upper case letter to your password");
-  var confirmLower = confirm("Click OK to add a lower case letter to your password");
+      while (confirmLower === false && confirmUpper === false && confirmNumber === false && confirmSpecialCharacter === false) {
+        alert("You must choose at least one parameter.");
+        var confirmSpecialCharacter = confirm("Click OK to add a special character to your password.");
+        var confirmNumber = confirm("Click OK to add a number to your password.");
+        var confirmUpper = confirm("Click OK to an upper case letter to your password");
+        var confirmLower = confirm("Click OK to add a lower case letter to your password");
 }
 
 
 
-var passwordCharacters = []
+      var passwordCharacters = []
 
-if (confirmSpecialCharacter){
-  passwordCharacters = passwordCharacters.concat(number)
+    if (confirmSpecialCharacter){
+      passwordCharacters = passwordCharacters.concat(number)
 }
 
-if (confirmSpecialCharacter){
-  passwordCharacters = passwordCharacters.concat(specialCharacter)
+    if (confirmSpecialCharacter){
+      passwordCharacters = passwordCharacters.concat(specialCharacter)
 }
 
-if (confirmUpper){
-  passwordCharacters = passwordCharacters.concat(upper)
+    if (confirmUpper){
+      passwordCharacters = passwordCharacters.concat(upper)
 }
 
-if (confirmLower){
-  passwordCharacters = passwordCharacters.concat(lower)
+    if (confirmLower){
+      passwordCharacters = passwordCharacters.concat(lower)
 }
 
-console.log(passwordCharacters)
+      console.log(passwordCharacters)
   
 
 //create empty string 
 
-var randomPassword = ""
-for (var i = 0; i < confirmLength; i++) {
-  randomPassword = randomPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
-  console.log(randomPassword)
+      var randomPassword = ""
+      for (var i = 0; i < confirmLength; i++) {
+        randomPassword = randomPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+        console.log(randomPassword)
+      }
+      return randomPassword;
+
+
 }
-return randomPassword;
 
 
 // Write password to the #password input
@@ -92,6 +95,3 @@ function writePassword() {
 }
 
   
-  
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
